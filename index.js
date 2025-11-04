@@ -51,7 +51,9 @@ let npmPath = path.join(FILE_PATH, npmName);
 let phpPath = path.join(FILE_PATH, phpName);
 let webPath = path.join(FILE_PATH, webName);
 let botPath = path.join(FILE_PATH, botName);
-let subPath = path.join(FILE_PATH,${SUB_PATH}.txt);
+const safeSubPath = SUB_PATH.replace(/[^a-zA-Z0-9_-]/g, '');
+let subPath = path.join(FILE_PATH, `${safeSubPath}.txt`);
+
 let listPath = path.join(FILE_PATH, 'list.txt');
 let bootLogPath = path.join(FILE_PATH, 'boot.log');
 let configPath = path.join(FILE_PATH, 'config.json');
